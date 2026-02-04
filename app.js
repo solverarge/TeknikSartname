@@ -1,8 +1,0 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const dogruSifre = "1234";
-
-  const sifre = prompt("Şifre giriniz:");
-  if (sifre !== dogruSifre) {
-    document.body.innerHTML = "<h2>Erişim reddedildi</h2>";
-  }
-});
