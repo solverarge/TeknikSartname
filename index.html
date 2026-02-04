@@ -4,11 +4,63 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Giriş</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+    }
+    .kutu {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      width: 200px;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .hata {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>SOLVER ARGE</h1>
+  <div class="kutu">
+    <h1>SOLVER ARGE</h1>
+    <p>Şifre giriniz</p>
+    <input type="password" id="sifre">
+    <br>
+    <button onclick="kontrol()">Giriş</button>
+    <div class="hata" id="mesaj"></div>
+  </div>
 
-  <script src="app.js"></script>
+  <script>
+    function kontrol() {
+      const dogruSifre = "1234";
+      const girilen = document.getElementById("sifre").value;
+
+      if (girilen === dogruSifre) {
+        window.location.href = "icerik.html";
+      } else {
+        document.getElementById("mesaj").innerText = "Şifre hatalı";
+      }
+    }
+  </script>
+
 </body>
 </html>
